@@ -2,8 +2,9 @@ import avistamientos as av
 from datetime import datetime
 from coordenadas import *
 import locale
+from avistamientos import *
 
-def mostrar_iterable_enumerado(iterable):
+'''def mostrar_iterable_enumerado(iterable):
     for indx, elem in enumerate(iterable, 1):
         print(f"\t{indx}-{elem}")
 
@@ -149,14 +150,20 @@ def test_duracion_total_avistamientos_año(avistamientos, estado):
 def test_avistamiento_mas_reciente_por_estado(avistamientos):
     indice = av.avistamiento_mas_reciente_por_estado(avistamientos)
     print("Mostrando la fecha del último avistamiento por estado")
-    mostrar_diccionario2(indice)
+    mostrar_diccionario2(indice)'''
+
+def lee_avistamientos_test():
+    avistamientos = lee_avistamientos('data\ovnis.csv')
+    print(avistamientos[:5])
 
 def main():
     # Establecemos la configuración local de la hora al formato
     # que esté definido en el ordenador del usuario
     locale.setlocale(locale.LC_TIME, '')
 
-    avistamientos = av.lee_avistamientos("data/ovnis.csv")
+    lee_avistamientos_test()
+
+    '''avistamientos = av.lee_avistamientos("data/ovnis.csv")
     test_lee_avistamientos (avistamientos)
 
     ### 2.1 ##########################################################
@@ -258,6 +265,6 @@ def main():
     ### 4.13 ##########################################################
     print("4.13" , "#"*70)
     test_avistamiento_mas_reciente_por_estado(avistamientos)
-
+'''
 if __name__=="__main__":
     main()

@@ -1,8 +1,9 @@
 ## Definición de tipos
 # Creación de una tupla con nombre para las coordenadas
 from collections import namedtuple
+from typing import NamedTuple
 from math import radians, sin, cos, asin, sqrt
-Coordenadas = namedtuple('Coordenadas', 'latitud, longitud')
+Coordenadas = NamedTuple('Coordenadas', [('latitud',float), ('longitud',float)])
 
 def a_radianes(coordenadas):
     '''Convierte unas coordenadas en grados a radianes
